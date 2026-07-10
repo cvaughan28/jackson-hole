@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Jackson Hole</title>
+  <meta name="description" content="Vaughan family Jackson Hole trip — July 25–29, 2026">
+  <meta name="theme-color" content="#22453a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Jackson Hole">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="header">
+    <div class="header-inner">
+      <h1>Jackson Hole</h1>
+      <p class="header-sub">July 25–29, 2026 · Chris · Whitney · Reid</p>
+    </div>
+  </header>
+
+  <main id="content"></main>
+
+  <div id="map-viewer" class="map-viewer hidden">
+    <button id="map-close" class="map-close" aria-label="Close map">✕</button>
+    <div class="map-scroll"><img id="map-img" src="" alt="Park map"></div>
+  </div>
+
+  <nav id="tabbar">
+    <button data-tab="today" class="tab active"><span class="tab-icon">⛰️</span>Today</button>
+    <button data-tab="plan" class="tab"><span class="tab-icon">🗓️</span>Plan</button>
+    <button data-tab="maps" class="tab"><span class="tab-icon">🗺️</span>Maps</button>
+    <button data-tab="explore" class="tab"><span class="tab-icon">🍽️</span>Explore</button>
+    <button data-tab="info" class="tab"><span class="tab-icon">ℹ️</span>Info</button>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

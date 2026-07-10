@@ -1,0 +1,183 @@
+:root {
+  --pine: #22453a;
+  --pine-light: #2f5d4e;
+  --cream: #faf6ef;
+  --card: #ffffff;
+  --ink: #26302c;
+  --ink-soft: #5c6a64;
+  --accent: #c67b3f;
+  --accent-soft: #f4e3d3;
+  --line: #e4ddd0;
+  --good: #2e7d4f;
+  --radius: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+}
+
+/* Header */
+#header {
+  background: linear-gradient(160deg, var(--pine) 0%, var(--pine-light) 100%);
+  color: #fff;
+  padding: calc(14px + env(safe-area-inset-top)) 18px 14px;
+  position: sticky; top: 0; z-index: 20;
+}
+.header-inner h1 { font-size: 1.35rem; letter-spacing: 0.3px; }
+.header-sub { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
+
+/* Main */
+#content { padding: 14px 14px 20px; max-width: 640px; margin: 0 auto; }
+
+h2.section { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--ink-soft); margin: 18px 4px 8px; }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px rgba(38,48,44,0.05);
+}
+
+/* Day header cards */
+.day-header {
+  background: var(--pine);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 20px 0 10px;
+}
+.day-header .day-date { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+.day-header .day-title { font-size: 1.15rem; font-weight: 700; margin-top: 2px; }
+.day-header .day-sub { font-size: 0.82rem; opacity: 0.85; margin-top: 4px; }
+
+/* Events */
+.event { display: flex; gap: 12px; }
+.event-time-col { min-width: 64px; text-align: right; padding-top: 2px; }
+.event-time { font-weight: 700; font-size: 0.9rem; color: var(--pine); }
+.event-end { font-size: 0.72rem; color: var(--ink-soft); }
+.event-body { flex: 1; min-width: 0; }
+.event-title { font-weight: 650; font-size: 0.98rem; line-height: 1.3; }
+.event-details { margin-top: 6px; }
+.event-details li { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.45; margin: 3px 0 3px 16px; }
+
+.leave-by {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: #8a4f1d;
+  font-size: 0.78rem;
+  font-weight: 650;
+  border-radius: 8px;
+  padding: 3px 8px;
+  margin-top: 7px;
+}
+
+.res-box {
+  margin-top: 9px;
+  background: #f2f7f3;
+  border: 1px solid #d8e6da;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+}
+.res-box .res-tag { font-weight: 700; color: var(--good); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; }
+.res-box div { margin-top: 2px; }
+.res-box a { color: var(--pine); font-weight: 600; }
+
+.btn-row { margin-top: 9px; display: flex; gap: 8px; flex-wrap: wrap; }
+.maps-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--pine); text-decoration: none;
+  border: 1.5px solid var(--pine);
+  border-radius: 9px; padding: 5px 11px;
+  background: #fff;
+}
+.maps-btn:active { background: var(--pine); color: #fff; }
+
+/* Today tab */
+.hero {
+  background: linear-gradient(150deg, var(--pine) 0%, #3a6b58 100%);
+  color: #fff; border-radius: var(--radius);
+  padding: 18px; margin-bottom: 12px;
+}
+.hero .hero-kicker { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.4px; opacity: 0.8; }
+.hero .hero-big { font-size: 1.5rem; font-weight: 750; margin-top: 4px; line-height: 1.2; }
+.hero .hero-sub { font-size: 0.85rem; opacity: 0.9; margin-top: 6px; line-height: 1.45; }
+
+.now-tag, .next-tag {
+  font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+  border-radius: 6px; padding: 2px 7px; display: inline-block; margin-bottom: 6px;
+}
+.now-tag { background: var(--accent); color: #fff; }
+.next-tag { background: var(--pine); color: #fff; }
+
+/* Explore */
+.explore-item { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 2px; border-bottom: 1px solid var(--line); }
+.explore-item:last-child { border-bottom: none; }
+.explore-name { font-weight: 650; font-size: 0.92rem; }
+.explore-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 1px; }
+.pin-btn { flex-shrink: 0; text-decoration: none; font-size: 1.1rem; padding: 6px 9px; border-radius: 9px; background: var(--accent-soft); }
+
+/* Maps tab */
+.map-card { cursor: pointer; }
+.map-card .map-title { font-weight: 650; }
+.map-card .map-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 2px; }
+.map-card .map-open { font-size: 0.78rem; color: var(--accent); font-weight: 650; margin-top: 6px; }
+
+.map-viewer { position: fixed; inset: 0; background: #111; z-index: 50; }
+.map-viewer.hidden { display: none; }
+.map-scroll { width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch; }
+.map-scroll img { display: block; min-width: 150%; }
+.map-close {
+  position: fixed; top: calc(12px + env(safe-area-inset-top)); right: 14px; z-index: 51;
+  background: rgba(255,255,255,0.92); border: none; border-radius: 50%;
+  width: 40px; height: 40px; font-size: 1rem; font-weight: 700; cursor: pointer;
+}
+
+/* Info */
+.info-list li { font-size: 0.87rem; line-height: 1.5; margin: 6px 0 6px 4px; list-style: none; }
+
+/* Tab bar */
+#tabbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 30;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tab {
+  flex: 1; border: none; background: none;
+  font-family: inherit; font-size: 0.66rem; font-weight: 650; color: var(--ink-soft);
+  padding: 8px 0 6px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.tab-icon { font-size: 1.25rem; }
+.tab.active { color: var(--pine); }
+.tab.active .tab-icon { transform: scale(1.1); }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream: #171d1a;
+    --card: #212a25;
+    --ink: #e8e6df;
+    --ink-soft: #a3aca6;
+    --line: #32403a;
+    --accent-soft: #43301f;
+  }
+  .maps-btn { background: var(--card); }
+  #tabbar { background: #1c2420; }
+  .res-box { background: #1f2e24; border-color: #33513c; }
+  .res-box a { color: #9fd4b4; }
+  .leave-by { color: #eab583; }
+  .pin-btn { background: #43301f; }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jackson-hole",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "docs", "-p", "4790", "-c-1"],
+      "port": 4790
+    }
+  ]
+}
