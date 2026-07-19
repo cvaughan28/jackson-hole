@@ -396,6 +396,68 @@ const TRIP = {
     { file: "maps/yellowstone-west-thumb.jpg", title: "West Thumb / Grant Village", note: "First Yellowstone stop" },
   ],
 
+  packing: [
+    {
+      group: "Layers (mornings are in the 40s, even in July)",
+      items: [
+        "Warm layer each — fleece or light puffy",
+        "Rain shells — afternoon thunderstorms are routine",
+        "T-shirts / shorts for warm afternoons",
+        "Long pants each — cool mornings + the float trip",
+        "Warm hat — the tram summit is chilly",
+        "Sun hats / caps",
+        "Extra socks",
+      ],
+    },
+    {
+      group: "Feet & water",
+      items: [
+        "Broken-in walking or hiking shoes",
+        "Sandals or water shoes — the float can splash",
+        "Swimsuits ×3 — Lodge pool + hot tub",
+      ],
+    },
+    {
+      group: "Sun & trail (altitude sun is no joke)",
+      items: [
+        "Sunscreen — high SPF",
+        "Sunglasses for all three",
+        "SPF lip balm",
+        "Daypack for park days",
+        "Refillable water bottles ×3",
+        "Binoculars — wildlife spotting",
+        "Bug spray",
+        "Trail snacks (restock at Albertsons in Jackson)",
+      ],
+    },
+    {
+      group: "Documents & tech",
+      items: [
+        "Driver's licenses (REAL ID) — needed to fly",
+        "Park pass — Recreation.gov order # is under Info",
+        "Phone chargers + a car charger",
+        "Battery pack — offline maps drain phones fast",
+        "Download offline Google Maps of Jackson→Yellowstone",
+        "Open this app once on wifi so it's cached",
+      ],
+    },
+    {
+      group: "For Reid",
+      items: [
+        "Headphones + downloads for the drives",
+        "Favorite snacks",
+        "Motion-sickness remedy for mountain roads",
+        "Grab a free Junior Ranger booklet at any visitor center",
+      ],
+    },
+    {
+      group: "Don't pack",
+      items: [
+        "Bear spray — not allowed on planes; rent at Skinny Skis instead",
+      ],
+    },
+  ],
+
   info: [
     {
       title: "Reservations at a glance",

@@ -183,6 +183,31 @@ function renderExplore() {
     </div>`).join("");
 }
 
+// Packing checkmarks are saved per phone, so each of us keeps our own list.
+const PACK_KEY = "jh-packing";
+
+function packChecked() {
+  try { return new Set(JSON.parse(localStorage.getItem(PACK_KEY) || "[]")); }
+  catch { return new Set(); }
+}
+
+function renderPacking() {
+  const checked = packChecked();
+  const total = TRIP.packing.reduce((n, g) => n + g.items.length, 0);
+  return `
+  <h2 class="section">🎒 Packing list <span class="pack-count">${checked.size}/${total}</span></h2>
+  ${TRIP.packing.map((g, gi) => `
+    <div class="card">
+      <div class="pack-group">${esc(g.group)}</div>
+      ${g.items.map((it, ii) => {
+        const id = gi + ":" + ii;
+        const on = checked.has(id);
+        return `<label class="pack-item${on ? " packed" : ""}"><input type="checkbox" data-pack="${id}" ${on ? "checked" : ""}><span>${esc(it)}</span></label>`;
+      }).join("")}
+    </div>`).join("")}
+  <button id="pack-reset" class="pack-reset">Reset packing list</button>`;
+}
+
 function renderInfo() {
   content.innerHTML = `
   <div class="card">
@@ -192,7 +217,26 @@ function renderInfo() {
   </div>
   ${TRIP.info.map((sec) => `
     <h2 class="section">${esc(sec.title)}</h2>
-    <div class="card"><ul class="info-list">${sec.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("")}`;
+    <div class="card"><ul class="info-list">${sec.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("")}
+  ${renderPacking()}`;
+
+  content.querySelectorAll("[data-pack]").forEach((box) => {
+    box.addEventListener("change", () => {
+      const checked = packChecked();
+      box.checked ? checked.add(box.dataset.pack) : checked.delete(box.dataset.pack);
+      localStorage.setItem(PACK_KEY, JSON.stringify([...checked]));
+      box.closest(".pack-item").classList.toggle("packed", box.checked);
+      const count = content.querySelector(".pack-count");
+      const total = TRIP.packing.reduce((n, g) => n + g.items.length, 0);
+      if (count) count.textContent = checked.size + "/" + total;
+    });
+  });
+
+  $("#pack-reset").addEventListener("click", () => {
+    localStorage.removeItem(PACK_KEY);
+    renderInfo();
+    window.scrollTo(0, document.body.scrollHeight);
+  });
 }
 
 const TABS = { today: renderToday, plan: renderPlan, maps: renderMaps, explore: renderExplore, info: renderInfo };

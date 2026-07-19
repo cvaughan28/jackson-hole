@@ -1,5 +1,5 @@
 // Bump this version whenever any app file changes so phones pick up the update.
-const CACHE_VERSION = "jh-v1";
+const CACHE_VERSION = "jh-v2";
 
 const ASSETS = [
   "./",

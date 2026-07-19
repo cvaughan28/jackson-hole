@@ -165,6 +165,31 @@ h2.section { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.2px
 .tab.active { color: var(--pine); }
 .tab.active .tab-icon { transform: scale(1.1); }
 
+/* packing list */
+.pack-count {
+  font-size: 0.72rem; font-weight: 650; color: var(--ink-soft);
+  background: var(--card); border: 1px solid var(--line);
+  padding: 2px 8px; border-radius: 999px; vertical-align: middle; margin-left: 6px;
+}
+.pack-group { font-weight: 700; font-size: 0.82rem; color: var(--pine-light); margin-bottom: 6px; }
+.pack-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 7px 0; border-top: 1px solid var(--line);
+  font-size: 0.9rem; cursor: pointer;
+}
+.pack-item:first-of-type { border-top: none; }
+.pack-item input {
+  width: 19px; height: 19px; margin: 1px 0 0; flex: none;
+  accent-color: var(--good);
+}
+.pack-item.packed span { color: var(--ink-soft); text-decoration: line-through; }
+.pack-reset {
+  display: block; margin: 14px auto 4px; padding: 8px 16px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  font-family: inherit; font-size: 0.78rem; font-weight: 650; color: var(--ink-soft);
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --cream: #171d1a;
